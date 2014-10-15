@@ -1,0 +1,33 @@
+.clearfix:after{display:block;clear:both;content:'.';height:0;visibility:hidden;font-size:0;}
+.clearfix {_zoom:1;}
+.fl{float:left;}
+.fr{float:right;}
+a{text-decoration:none;}
+
+.body{font-family:Tahoma,Arial,”Helvetica Neue“,”Hiragino Sans GB”,Simsun,sans-self;background-color:#f5f5ee;}
+.topNav{height:76px;}
+.topNavContent{position:fixed;height:76px;width:100%;background: rgba(245, 245, 238, 0.8) none repeat scroll 0 0 !important;}
+.topNav-logo{height:76px;width:160px;margin-left:50px;font-size:70px;line-height:70px;color:#eb6101;}
+.topNav-nav{height:76px;margin-right:50px;}
+.topNav-nav li{float:left;}
+.topNav-nav li a{display:block;width:120px;text-align:center;line-height:76px;font-size:24px;color:#7da457;}
+.topNav-nav li a:hover{text-decoration:underline;}
+
+
+.wrapper{height:680px;}
+.wrapper-about{background-color:#bce2e8;}
+.wrapper-2{background-color:#eebbcb;}
+.wrapper-3{background-color:#a1a46d;}
+.wrapper-4{background-color:#a23a52;}
+.wrapper-5{background-color:#38a1b8;}
+
+.wrapper-content{}
+.content-about{width:1000px;margin:20px auto;}
+.content-img{width:600px;height:400px;background-color:#eee;}
+.content-pdf{width:400px;height:400px;background-color:#ccc;}
+
+
+
+
+.footer{height:118px;background-color:#474441;}
+
