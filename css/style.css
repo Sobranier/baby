@@ -29,5 +29,8 @@ a{text-decoration:none;}
 
 
 
-.footer{height:118px;background-color:#474441;}
-
+.footer{height:118px;/*background-color:#474441;*/}
+.footer-link{width:900px;margin:20px auto;height:80px;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.footer-link li{float:left;width:300px;height:80px;line-height:80px;text-align:center;font-size:30px;font-weight:bold;}
+.footer-content{width:900px;margin:0 auto;}
+.footer-content p{width:100%;margin:5px 0;text-align:center;font-size:14px;}
