@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>贝儿 | 关于我们</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+	<script src="../js/esl.js"></script>
+</head>
+<body>
+	<div class='topNav'>
+		<div class='topNavContent'>
+		<a class='topNav-logo fl' href='#'>贝儿</a>
+		<ul class='topNav-nav fr'>
+			<li><a href='index.html'>首页</a></li>
+			<li><a href='about.html'>关于我们</a></li>
+		</ul>
+		</div>
+	</div>
+	<div class='wrapper-content'>
+		<ul class='subNav clearfix'>
+			<li><a href='about.html'>管理团队</a></li>
+			<li class='selected'><a href='analytics.html'>初创分析</a></li>
+		</ul>
+		<div class='content clearfix'>
+			<div class='content-analytics'>
+
+				<div id="container" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
+				<div id="container2" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
+			</div>
+		
+		</div>
+	</div>
+	
+	<div class='footer'>
+		<ul class='footer-link'>
+			<li>开放</li>
+			<li>服务</li>
+			<li>极致</li>
+		</ul>
+		<div class='footer-content'>
+			<p>关于贝儿 - 加入贝儿 - 联系我们 - 用户协议 - 新闻头条 - 下载贝儿 - 友情链接 - 贝儿开放平台- 贝儿</p> 
+			<p>BEIR©2014 - 贝儿-中国妈妈社交网络 - 京ICP备11048134号- 贝儿初创科技（北京）有限公司</p>
+		</div>
+	</div>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths:{ 
+                'echarts' : 'http://echarts.baidu.com/build/echarts',
+                'echarts/chart/bar' : 'http://echarts.baidu.com/build/echarts'
+            }
+        });
+		require(
+            [
+                'echarts',
+                'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('container')); 
+                var myChart2 = ec.init(document.getElementById('container2')); 
+				option = {
+					tooltip : {
+						trigger: 'axis',
+						axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+							type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						data:['交易规模']
+					},
+					toolbox: {
+						show : true,
+						orient: 'vertical',
+						x: 'right',
+						y: 'center',
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							data : ['2012Q1','2012Q2','2012Q3','2012Q4','2013Q1','2013Q2','2013Q3','2013Q4','2014Q1','2014Q2']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value'
+						}
+					],
+					series : [
+						{
+							name:'交易规模',
+							type:'bar',
+							data:[22.0,30.0,40.3,64.4,64.3,83.3,102.6,187.8,173.6,217.9]
+						}
+					]
+				};
+                 option2 = {
+					tooltip : {
+						trigger: 'axis',
+						axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+							type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						data:['同比增长率']
+					},
+					toolbox: {
+						show : true,
+						orient: 'vertical',
+						x: 'right',
+						y: 'center',
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							data : ['2013Q1','2013Q2','2013Q3','2013Q4','2014Q1','2014Q2']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value'
+						}
+					],
+					series : [
+						{
+							name:'环比增长率',
+							type:'bar',
+							data:[192.6,177.8,154.7,191.4,169.8,161.7]
+						}
+					]
+				};    
+        
+                // 为echarts对象加载数据 
+                myChart.setOption(option); 
+                myChart2.setOption(option2); 
+            }
+        );
+		
+	</script>
+</body>
+</html>
