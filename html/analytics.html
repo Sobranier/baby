@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>贝儿 | 关于我们</title>
+	<title>暖爸 | 关于我们</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -11,7 +11,7 @@
 <body>
 	<div class='topNav'>
 		<div class='topNavContent'>
-		<a class='topNav-logo fl' href='#'>贝儿</a>
+		<a class='topNav-logo fl' href='#'>暖爸</a>
 		<ul class='topNav-nav fr'>
 			<li><a href='index.html'>首页</a></li>
 			<li><a href='about.html'>关于我们</a></li>
@@ -27,8 +27,10 @@
 			<div class='content-analytics'>
 				<div id="container" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
 				<div id="container2" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
-				<div id="container3" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
+				<div id="container3" style="display:none;min-width: 310px; height: 400px; margin: 20px auto"></div>
 				<div id="container4" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
+				<div id="container5" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
+				<div id="container6" style="min-width: 310px; height: 400px; margin: 20px auto"></div>
 			</div>
 		
 		</div>
@@ -65,6 +67,8 @@
                 var myChart2 = ec.init(document.getElementById('container2')); 
                 var myChart3 = ec.init(document.getElementById('container3')); 
                 var myChart4 = ec.init(document.getElementById('container4')); 
+                var myChart5 = ec.init(document.getElementById('container5')); 
+                var myChart6 = ec.init(document.getElementById('container6')); 
 				option = {
 					tooltip : {
 						trigger: 'axis',
@@ -73,7 +77,7 @@
 						}
 					},
 					legend: {
-						data:['交易规模']
+						data:['母婴在线市场交易规模']
 					},
 					toolbox: {
 						show : true,
@@ -145,7 +149,7 @@
 					],
 					series : [
 						{
-							name:'环比增长率',
+							name:'同比增长率',
 							type:'bar',
 							data:[192.6,177.8,154.7,191.4,169.8,161.7]
 						}
@@ -235,9 +239,8 @@
 			option4 = {
 				timeline : {
 				   data : [
-					  '2013-01-01', '2013-02-01', '2013-03-01', '2013-04-01', '2013-05-01',
+					  '2013-01-01',
 					  { name:'2013-06-01', symbol:'emptyStar6', symbolSize:8 },
-					  '2013-07-01', '2013-08-01', '2013-09-01', '2013-10-01', '2013-11-01',
 					  { name:'2013-12-01', symbol:'star6', symbolSize:8 }
 					],
 					label : {
@@ -249,15 +252,15 @@
 				options : [
 					{
 						title : {
-							text: '浏览器占比变化',
-							subtext: '纯属虚构'
+							text: '母婴电商市场份额',
+							subtext: '数据来源：易观'
 						},
 						tooltip : {
 							trigger: 'item',
 							formatter: "{a} <br/>{b} : {c} ({d}%)"
 						},
 						legend: {
-							data:['Chrome','Firefox','Safari','IE9+','IE8-']
+							data:['天猫','京东','当当','苏宁易购','亚马逊中国']
 						},
 						toolbox: {
 							show : true,
@@ -270,16 +273,19 @@
 						},
 						series : [
 							{
-								name:'浏览器（数据纯属虚构）',
+								name:'市场份额',
 								type:'pie',
 								center: ['50%', '45%'],
 								radius: '50%',
 								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
+									{value: 53.0, name:'天猫'},
+									{value: 16.4, name:'京东'},
+									{value: 6.70, name:'当当'},
+									{value: 5.70, name:'苏宁易购'},
+									{value: 3.90, name:'亚马逊中国'},
+									{value: 4.20, name:'一号店'},
+									{value: 0.00, name:'QQ网购'},
+									{value: 10.1, name:'其它'}
 								]
 							}
 						]
@@ -287,14 +293,17 @@
 					{
 						series : [
 							{
-								name:'浏览器（数据纯属虚构）',
+								name:'市场份额',
 								type:'pie',
 								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
+									{value: 52.3, name:'天猫'},
+									{value: 19.4, name:'京东'},
+									{value: 7.20, name:'当当'},
+									{value: 4.90, name:'一号店'},
+									{value: 4.70, name:'苏宁易购'},
+									{value: 3.60, name:'亚马逊中国'},
+									{value: 2.20, name:'QQ网购'},
+									{value: 5.70, name:'其它'}
 								]
 							}
 						]
@@ -302,156 +311,109 @@
 					{
 						series : [
 							{
-								name:'浏览器（数据纯属虚构）',
+								name:'市场份额',
 								type:'pie',
 								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
-								]
-							}
-						]
-					},
-					{
-						series : [
-							{
-								name:'浏览器（数据纯属虚构）',
-								type:'pie',
-								data:[
-									{value: idx * 128 + 80,  name:'Chrome'},
-									{value: idx * 64  + 160,  name:'Firefox'},
-									{value: idx * 32  + 320,  name:'Safari'},
-									{value: idx * 16  + 640,  name:'IE9+'},
-									{value: idx++ * 8  + 1280, name:'IE8-'}
+									{value: 54.2, name:'天猫'},
+									{value: 16.3, name:'京东'},
+									{value: 4.90, name:'当当'},
+									{value: 4.20, name:'苏宁易购'},
+									{value: 3.70, name:'一号店'},
+									{value: 1.50, name:'唯品会'},
+									{value: 1.40, name:'亚马逊中国'},
+									{value: 13.8, name:'其它'}
 								]
 							}
 						]
 					}
 				]
 			};
-
+					option5 = {
+					tooltip : {
+						trigger: 'axis',
+						axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+							type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						data:['中国网名年龄结构']
+					},
+					toolbox: {
+						show : true,
+						orient: 'vertical',
+						x: 'right',
+						y: 'center',
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							data : ['十岁以下','10-19岁','20-29岁','30-39岁','40-49岁','50-59岁','60岁及以上']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value'
+						}
+					],
+					series : [
+						{
+							name:'交易规模',
+							type:'bar',
+							data:[2.1,24.5,30.7,23.4,12.0,5.2,2.1]
+						}
+					]
+				};
+				option6 = {
+					tooltip : {
+						trigger: 'axis',
+						axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+							type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						data:['中国网名性别结构']
+					},
+					toolbox: {
+						show : true,
+						orient: 'vertical',
+						x: 'right',
+						y: 'center',
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							data : ['男','女']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value'
+						}
+					],
+					series : [
+						{
+							name:'交易规模',
+							type:'bar',
+							data:[55.6,44.4]
+						}
+					]
+				};
 
                 // 为echarts对象加载数据 
 
@@ -459,6 +421,8 @@
                 myChart2.setOption(option2); 
                 myChart3.setOption(option3); 
                 myChart4.setOption(option4); 
+                myChart5.setOption(option5); 
+                myChart6.setOption(option6); 
             }
         );
 		
